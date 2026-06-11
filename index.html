@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estudios Bravío | Estudio y Conservación de la Fauna Silvestre</title>
+<!-- Material Symbols for Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config based on DESIGN_SYSTEM_14 -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f0f2f5",
+                    "on-primary-fixed": "#0c1d2c",
+                    "surface-container-highest": "#e1e3e4",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001c37",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#3a5a7f",
+                    "on-surface-variant": "#44474c",
+                    "tertiary-fixed": "#d7e4f7",
+                    "on-primary-fixed-variant": "#384859",
+                    "surface": "#f8f9fa",
+                    "secondary-container": "#b2d1fd",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-fixed": "#101c2a",
+                    "tertiary-fixed-dim": "#bbc8da",
+                    "outline": "#74777d",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#28486d",
+                    "secondary": "#416086",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary-container": "#202d3b",
+                    "on-tertiary-fixed-variant": "#3b4857",
+                    "inverse-primary": "#b7c8dd",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed": "#d3e4f9",
+                    "secondary-fixed": "#d2e4ff",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed-dim": "#b7c8dd",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#071828",
+                    "surface-dim": "#d9dadb",
+                    "on-surface": "#191c1d",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c6cc",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#0b1826",
+                    "on-tertiary-container": "#8794a6",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-container": "#1d2d3d",
+                    "on-primary-container": "#8495a8",
+                    "secondary-fixed-dim": "#a9c9f4",
+                    "surface-tint": "#506072"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0.125rem",
+                    "xl": "0.25rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "20px",
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 12px rgba(7, 24, 40, 0.08);
+        }
+        .card-border {
+            border: 1px solid rgba(7, 24, 40, 0.12);
+        }
+        .hover-lift {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            border-color: #416086;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Shared Component: TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-primary/10 soft-shadow">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto py-1">
+<a class="flex items-center" href="#">
+<img alt="Estudios Bravío Logo" class="h-12 md:h-14 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJImyKd8VzgKxw56qvIbM1DnTLqWz8xa_twP3xeBcrGj9F54LnmMzjw9cpzKLkDrdHS-wA7Qiu2oqsom0IrzHsEZDYyN9K0HKfrlku5FXpvGI37JiH5JEp8ObP1Y4LHKGhISh61Sc_Rl_qWgftHjnPUjPdXDV_ISck_dchWMzJlY19PIbjtIdwj73rueyUwvMAZ-Jyq2VoHvEQC9dyatgKh4JYNNTFno2ty8U7l9cyeQ86Y8hcTyAZpze35gssXjuVkqd_zmSO9oY"/>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="text-label-sm uppercase text-primary border-b-2 border-primary pb-0.5 tracking-wider font-bold" href="#home">Inicio</a>
+<a class="text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors tracking-wider font-semibold" href="#about">Nosotros</a>
+<a class="text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors tracking-wider font-semibold" href="#services">Servicios</a>
+<a class="text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors tracking-wider font-semibold" href="#contact">Contacto</a>
+</nav>
+<div class="flex items-center gap-gutter">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 text-label-sm uppercase font-bold tracking-widest hover:bg-secondary transition-all active:scale-95">Consultar</button>
+<button class="md:hidden text-on-background" id="mobile-menu-toggle">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface-container-lowest z-[60] translate-x-full transition-transform duration-300 md:hidden" id="mobile-menu">
+<div class="flex flex-col h-full p-gutter">
+<div class="flex justify-between items-center mb-8">
+<img alt="Estudios Bravío Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJImyKd8VzgKxw56qvIbM1DnTLqWz8xa_twP3xeBcrGj9F54LnmMzjw9cpzKLkDrdHS-wA7Qiu2oqsom0IrzHsEZDYyN9K0HKfrlku5FXpvGI37JiH5JEp8ObP1Y4LHKGhISh61Sc_Rl_qWgftHjnPUjPdXDV_ISck_dchWMzJlY19PIbjtIdwj73rueyUwvMAZ-Jyq2VoHvEQC9dyatgKh4JYNNTFno2ty8U7l9cyeQ86Y8hcTyAZpze35gssXjuVkqd_zmSO9oY"/>
+<button id="mobile-menu-close"><span class="material-symbols-outlined text-2xl">close</span></button>
+</div>
+<nav class="flex flex-col space-y-6">
+<a class="text-headline-lg-mobile font-headline-lg-mobile border-b border-outline-variant/20 pb-2" href="#home">Inicio</a>
+<a class="text-headline-lg-mobile font-headline-lg-mobile border-b border-outline-variant/20 pb-2" href="#about">Nosotros</a>
+<a class="text-headline-lg-mobile font-headline-lg-mobile border-b border-outline-variant/20 pb-2" href="#services">Servicios</a>
+<a class="text-headline-lg-mobile font-headline-lg-mobile border-b border-outline-variant/20 pb-2" href="#contact">Contacto</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 font-bold tracking-widest uppercase text-label-sm">Consultar</button>
+</div>
+</div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-6 pb-6 md:pt-10 md:pb-10 bg-white" id="home">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row items-center gap-6">
+<div class="flex-1 text-center md:text-left">
+<h1 class="font-display-lg text-primary mb-3 leading-[1.1]">Estudio y Conservación de la <span class="text-secondary italic font-semibold">Biodiversidad</span></h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg mb-6">Nuestro propósito es acercar el conocimiento científico sobre biodiversidad a quienes toman decisiones en los territorios. Transformamos datos técnicos en estrategias de preservación efectivas.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+<button class="bg-primary text-on-primary px-7 py-3 font-bold text-label-sm uppercase tracking-widest hover:bg-secondary transition-all">
+                        Nuestro Trabajo
+                    </button>
+<button class="border border-primary text-primary px-7 py-3 font-bold text-label-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all bg-primary/5">
+                        Servicios
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full flex justify-center items-center">
+<img alt="Paisaje de los Andes chilenos" class="w-full h-auto card-border soft-shadow grayscale-[10%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yQoydapB_NmGxDR7GnijgxolXrBUPUyNkINHUlpCTXytpM4Ko0aWTtnlY2DIDEWnEZ1nVAfkSinRfyWt12WbAoRRyV0dNoCSOSGTlehz5NZpDBsMQSsTa6tGNZyxDho114VWWHPUVd98zN77DokG-b1q8WTdLSn6RYwU46os_BoAfsrfbTqcnKjFgfv4TPy4Mdnf1BlCVfM8I8rVLwKG5_zSpKCiAsnsAKt3XDA8nZ0hlHn15usQilg0Yk5d-Fn0_YzBJ_TN_XFc"/>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-10 bg-background border-y border-primary/5">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-8">
+<h2 class="font-headline-lg text-primary mb-1">¿Por qué Estudios Bravío?</h2>
+<p class="text-on-surface-variant font-body-md max-w-md mx-auto">Compromiso científico para la preservación de los ecosistemas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white p-6 card-border hover-lift flex flex-col items-center text-center gap-3">
+<div class="w-10 h-10 bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">biotech</span>
+</div>
+<h3 class="font-title-md text-primary">Precisión Científica</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed">Aplicamos metodologías de vanguardia y análisis estadísticos rigurosos en todos nuestros estudios ambientales.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 card-border hover-lift flex flex-col items-center text-center gap-3">
+<div class="w-10 h-10 bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">landscape</span>
+</div>
+<h3 class="font-title-md text-primary">Experiencia en Campo</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed">Nuestro equipo técnico cuenta con años de experiencia en los entornos más diversos y remotos.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 card-border hover-lift flex flex-col items-center text-center gap-3">
+<div class="w-10 h-10 bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">gavel</span>
+</div>
+<h3 class="font-title-md text-primary">Cumplimiento Normativo</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed">Aseguramos que cada proyecto cumpla estrictamente con las regulaciones ambientales y legales vigentes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-10 bg-white" id="about">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+<div class="relative group overflow-hidden">
+<img alt="Investigadora ambiental realizando trabajo de campo" class="w-full h-auto card-border grayscale-[5%] group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj1IPiiEg8S-n6Ju_I42MNCLr-MtxhR2EyaRp8mRazhO1PbTSO_2zFRT4elzGDzxtHh1UdbmvDK4-QFvCQfWjWHSpGXi_ipCiqUamJtqxQETpOwmNtElYPVbo8NsIpHgsRHdWZO94BZo3GlU8X1VqEqIiOOOVUTUIbCMvmkyTcyU1Dbe0p4GEIKnxpk0oHsVlI01kB2lY__QnbJfHOay0xihFMg_QBwgARz5tL8xSZ097MwKt1BKYFkbk32eR1SasBgaaa2GHMq-pO"/>
+<div class="absolute inset-0 border-2 border-primary/10 m-2 pointer-events-none"></div>
+</div>
+<div>
+<span class="text-secondary font-label-sm tracking-[0.2em] uppercase mb-1 block font-bold">Sobre Nosotros</span>
+<h2 class="font-headline-lg text-primary mb-4">Ciencia Aplicada a la Conservación</h2>
+<div class="space-y-4">
+<p class="font-body-lg text-on-surface-variant">En Estudios Bravío creemos que la conservación de la biodiversidad y el desarrollo de los territorios deben construirse sobre conocimiento confiable, ciencia aplicada y participación de las comunidades.</p>
+<p class="font-body-md text-on-surface-variant">Somos un equipo de profesionales con amplia trayectoria en los sectores público y privado, dedicados a poner la ciencia al servicio de las personas, trabajando en conjunto con empresas, comunidades e instituciones públicas.</p>
+<div class="flex items-start gap-4 p-5 bg-background border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary text-2xl shrink-0">eco</span>
+<p class="italic text-primary/90 font-medium text-body-md">"La ciencia debe estar al servicio de las personas para construir territorios resilientes y biodiversos."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-10 bg-background border-y border-primary/5" id="services">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-8">
+<h2 class="font-headline-lg text-primary mb-1">Nuestros Servicios</h2>
+<p class="text-on-surface-variant font-body-md">Especialistas en cada etapa de la gestión ambiental y territorial.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-primary/10 border border-primary/10 soft-shadow">
+<!-- Service Card -->
+<div class="bg-white p-7 hover:bg-white transition-all group border-b border-r border-primary/5">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">monitoring</span>
+<h3 class="font-title-md text-primary mb-2">Monitoreo Ambiental</h3>
+<p class="text-on-surface-variant text-body-md">Monitoreo de fauna silvestre y ecología de vertebrados e invertebrados mediante metodologías científicas avanzadas.</p>
+</div>
+<div class="bg-white p-7 hover:bg-white transition-all group border-b border-r border-primary/5">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">description</span>
+<h3 class="font-title-md text-primary mb-2">Impacto Ambiental</h3>
+<p class="text-on-surface-variant text-body-md">Análisis de datos ambientales complejos y gestión ambiental estratégica para proyectos de inversión y conservación.</p>
+</div>
+<div class="bg-white p-7 hover:bg-white transition-all group border-b border-primary/5">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">inventory_2</span>
+<h3 class="font-title-md text-primary mb-2">Inventarios</h3>
+<p class="text-on-surface-variant text-body-md">Catálogos exhaustivos de la riqueza biológica en áreas de estudio específicas para planes de manejo.</p>
+</div>
+<div class="bg-white p-7 hover:bg-white transition-all group border-r border-primary/5">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">nature_people</span>
+<h3 class="font-title-md text-primary mb-2">Restauración</h3>
+<p class="text-on-surface-variant text-body-md">Diseño y ejecución de planes para recuperar ecosistemas degradados y mejorar la conectividad biológica.</p>
+</div>
+<div class="bg-white p-7 hover:bg-white transition-all group border-r border-primary/5">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">verified_user</span>
+<h3 class="font-title-md text-primary mb-2">Gestión de Reservas</h3>
+<p class="text-on-surface-variant text-body-md">Inteligencia artificial aplicada a la conservación para el procesamiento eficiente de grandes volúmenes de datos.</p>
+</div>
+<div class="bg-white p-7 hover:bg-white transition-all group">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform inline-block">diversity_2</span>
+<h3 class="font-title-md text-primary mb-2">Asesoría Ambiental</h3>
+<p class="text-on-surface-variant text-body-md">Consultoría estratégica para integrar criterios de conservación en el desarrollo de proyectos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-10 bg-white" id="contact">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-primary p-8 md:p-12 flex flex-col lg:flex-row gap-10 items-center soft-shadow">
+<div class="lg:w-1/2">
+<h2 class="font-headline-lg text-white mb-4">Contáctanos</h2>
+<p class="font-body-md text-white/80 mb-8 max-w-md">
+                        Estamos listos para aportar nuestro rigor científico a tu proyecto ambiental. Completa el formulario y nos pondremos en contacto en menos de 24 horas.
+                    </p>
+<div class="space-y-4">
+<a class="flex items-center gap-4 hover:translate-x-1 transition-transform group" href="mailto:info@ebravio.cl">
+<div class="w-10 h-10 bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:bg-secondary/20 transition-colors"><span class="material-symbols-outlined text-xl">mail</span></div>
+<span class="text-white font-medium">info@ebravio.cl</span>
+</a>
+<a class="flex items-center gap-4 hover:translate-x-1 transition-transform group" href="tel:+56984382572">
+<div class="w-10 h-10 bg-white/10 flex items-center justify-center text-white border border-white/20 group-hover:bg-secondary/20 transition-colors"><span class="material-symbols-outlined text-xl">call</span></div>
+<span class="text-white font-medium">+56 9 84382572</span>
+</a>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<form class="bg-background p-6 space-y-4" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-primary uppercase font-bold">Nombre</label>
+<input class="border border-primary/20 px-3 py-2.5 focus:border-primary outline-none transition-all text-body-md bg-white" placeholder="Juan Pérez" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-primary uppercase font-bold">Email</label>
+<input class="border border-primary/20 px-3 py-2.5 focus:border-primary outline-none transition-all text-body-md bg-white" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-primary uppercase font-bold">Mensaje</label>
+<textarea class="border border-primary/20 px-3 py-2.5 focus:border-primary outline-none transition-all resize-none text-body-md bg-white" placeholder="Detalles de su requerimiento..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 font-bold text-label-sm uppercase tracking-[0.2em] hover:bg-secondary transition-all border border-white/10" type="submit">Enviar Mensaje</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-10 bg-background border-t border-primary/5" id="gallery">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-8">
+<span class="text-secondary font-label-sm tracking-widest uppercase mb-1 block font-bold">Galería</span>
+<h2 class="font-headline-lg text-primary mb-2">Nuestro Trabajo en Terreno</h2>
+<p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">Documentación visual de nuestras expediciones científicas y el monitoreo de la biodiversidad en Chile.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Panorama de paisaje" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yQoydapB_NmGxDR7GnijgxolXrBUPUyNkINHUlpCTXytpM4Ko0aWTtnlY2DIDEWnEZ1nVAfkSinRfyWt12WbAoRRyV0dNoCSOSGTlehz5NZpDBsMQSsTa6tGNZyxDho114VWWHPUVd98zN77DokG-b1q8WTdLSn6RYwU46os_BoAfsrfbTqcnKjFgfv4TPy4Mdnf1BlCVfM8I8rVLwKG5_zSpKCiAsnsAKt3XDA8nZ0hlHn15usQilg0Yk5d-Fn0_YzBJ_TN_XFc"/>
+</div>
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Investigador" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj1IPiiEg8S-n6Ju_I42MNCLr-MtxhR2EyaRp8mRazhO1PbTSO_2zFRT4elzGDzxtHh1UdbmvDK4-QFvCQfWjWHSpGXi_ipCiqUamJtqxQETpOwmNtElYPVbo8NsIpHgsRHdWZO94BZo3GlU8X1VqEqIiOOOVUTUIbCMvmkyTcyU1Dbe0p4GEIKnxpk0oHsVlI01kB2lY__QnbJfHOay0xihFMg_QBwgARz5tL8xSZ097MwKt1BKYFkbk32eR1SasBgaaa2GHMq-pO"/>
+</div>
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Análisis" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVS4Zqb6kCrRkkauxG1v8YO9GNzWwEi3oD3YeRamXCF4B4d_iy5DcjjhpSa4Wkc711ogHNazZE48zpKlXagyI6VleWwBE4KWI532w_KgPh2TkFBBTudKGc8aKrtUPBm0l7gm8VlU5KXritRcA4IknYZumcC8nHk_SXwo6nYUAkXJjmAYeiEKAt7odwYIiDnsQ5OnyRX-vgtSj7NWQxrV2cpmuU315Q0HPdrmGfusV5mcrMZwYTYpImJJwI3ydApckUBYQ_VmZfn2_0"/>
+</div>
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Exploración" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwsocLmPt1OBxl8CL_jhgfhCZmz3rHjzpDost9t63NEF-4Ad1eL0LVZEzS5B12aS3_2ZJ1YidFf9ndGOiGgWUhrYq-Tfo4PoS1RRm30_T18aNzcd6jxV_iZx5PGzv4ZOH0JIIQb3iC_GBNG551rcoCZgT5C1CFrNFgaKEaKydYkNcu5dtPm7qbchjZGJV9e7exIUsRpI3pY5Gzo25TxCa2g6cQJE5RxBzjAol-EdpgKNLwW9DwJB5gFVzaZ8xqmYKPpmgSFo3StfVT"/>
+</div>
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Fauna" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoFB1tXjolk5atnJGvSbfQmTwXvX6rxaAlIp5-u5jSx1KEiRST9atRA6DM27Z3HB1G6y7ZWhW-3i7wYY_4R849lpKexVCg5XedmkW5V7vUedxi3nIeJjhByqkO5cxFQK27-kuuUn_-SaiinEZ_W94V_-_844nk_QfOCDyZccU5UNHPHxfysqSamGam5gac_fYo05HpWUDIXPaMpRIeNPgtkxGEN7Q7rTtzOrp67_D2fElKzMmQdyjo0m0JpFsPtdY0gWGydP6KqTZv"/>
+</div>
+<div class="overflow-hidden bg-surface-dim border border-primary/10">
+<img alt="Especies" class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrjPSaqSp9pVvekRbe06_rrHlEA0EdGByFMfx1Be6emW3ydz7yhIqvNPX0HCk79SZEGeQZHfURL1-MaaVVsBVSfm_E5-1PQ_XMjF4B1tlju8DkHIhey7sPfv1doTsyhVHnqqkeST8fawsQxUIZ4uG6W2PbKtleJry-xGwVXkLn52Pe3MVzuTQbJk57Z_qNcLJNOMGjjuzDIKDnC-9xgniqIAy6P8YwF5zXmRGJgsW9xUvZ4dTKlxi8yBLPLg7FeW6hrlEdWRd-GXzi"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary text-on-primary w-full py-12 px-gutter">
+<div class="max-w-container-max mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<img alt="Estudios Bravío Logo" class="h-16 w-auto object-contain mb-6 invert brightness-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJImyKd8VzgKxw56qvIbM1DnTLqWz8xa_twP3xeBcrGj9F54LnmMzjw9cpzKLkDrdHS-wA7Qiu2oqsom0IrzHsEZDYyN9K0HKfrlku5FXpvGI37JiH5JEp8ObP1Y4LHKGhISh61Sc_Rl_qWgftHjnPUjPdXDV_ISck_dchWMzJlY19PIbjtIdwj73rueyUwvMAZ-Jyq2VoHvEQC9dyatgKh4JYNNTFno2ty8U7l9cyeQ86Y8hcTyAZpze35gssXjuVkqd_zmSO9oY"/>
+<p class="text-[11px] uppercase tracking-widest text-white/50 text-center md:text-left">© 2024 Estudios Bravío. Compromiso Científico con la Biodiversidad.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-white/60 hover:text-white transition-colors text-label-sm uppercase tracking-widest font-semibold" href="#">Privacidad</a>
+<a class="text-white/60 hover:text-white transition-colors text-label-sm uppercase tracking-widest font-semibold" href="#">Términos</a>
+<a class="text-white/60 hover:text-white transition-colors text-label-sm uppercase tracking-widest font-semibold" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+<script>
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = mobileMenu.querySelectorAll('a');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+    });
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('translate-x-full');
+    };
+
+    closeBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Simple scroll animation trigger
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-4');
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+        observer.observe(section);
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 10) {
+            header.classList.add('py-0');
+            header.classList.remove('py-1');
+        } else {
+            header.classList.add('py-1');
+            header.classList.remove('py-0');
+        }
+    });
+</script>
+</body></html>
